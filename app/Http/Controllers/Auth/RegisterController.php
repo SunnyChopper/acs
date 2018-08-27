@@ -70,7 +70,7 @@ class RegisterController extends Controller
 
         // Send email
         $link = "https://www.allcarshippers.com/verify/" . $email_verification_token;
-        $body = "Click on the link to verify your account: <a href='" . $link . "'>" . $link . "</a>";
+        $body = "Click on the link to verify your account: " . $link . "</a>";
         $email_data = array('name'=> $data["first_name"] . " " . $data["last_name"], "body" => $body, 'to_email' => $data["email"]);
 
         $to_email = $data["email"];
