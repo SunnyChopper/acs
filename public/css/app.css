@@ -1,0 +1,247 @@
+/*---------------------*\
+	Margins
+\*---------------------*/
+
+.mt-0 {
+	margin-top: 0px;
+}
+
+.mt-4 {
+	margin-top: 4px;
+}
+
+.mt-8 {
+	margin-top: 8px;
+}
+
+.mt-16 {
+	margin-top: 16px;
+}
+
+.mt-32 {
+	margin-top: 32px;
+}
+
+.mt-64 {
+	margin-top: 64px;
+}
+
+.mt-128 {
+	margin-top: 128px;
+}
+
+.mb-0 {
+	margin-bottom: 0px;
+}
+
+.mb-4 {
+	margin-bottom: 4px;
+}
+
+.mb-8 {
+	margin-bottom: 8px;
+}
+
+.mb-16 {
+	margin-bottom: 16px;
+}
+
+.mb-32 {
+	margin-bottom: 32px;
+}
+
+.mb-64 {
+	margin-bottom: 64px;
+}
+
+.mb-128 {
+	margin-bottom: 128px;
+}
+
+/*---------------------*\
+	Paddings
+\*---------------------*/
+
+.pt-0 {
+	padding-top: 0px;
+}
+
+.pt-4 {
+	padding-top: 4px;
+}
+
+.pt-8 {
+	padding-top: 8px;
+}
+
+.pt-16 {
+	padding-top: 16px;
+}
+
+.pt-32 {
+	padding-top: 32px;
+}
+
+.pt-64 {
+	padding-top: 64px;
+}
+
+.pb-0 {
+	padding-bottom: 0px;
+}
+
+.pb-4 {
+	padding-bottom: 4px;
+}
+
+.pb-8 {
+	padding-bottom: 8px;
+}
+
+.pb-16 {
+	padding-bottom: 16px;
+}
+
+.pb-32 {
+	padding-bottom: 32px;
+}
+
+.pb-64 {
+	padding-bottom: 64px;
+}
+
+.p-0 {
+	padding: 0px;
+}
+
+.p-4 {
+	padding: 4px;
+}
+
+.p-8 {
+	padding: 8px;
+}
+
+.p-16 {
+	padding: 16px;
+}
+
+.p-32 {
+	padding: 32px;
+}
+
+.p-64 {
+	padding: 64px;
+}
+
+/*---------------------*\
+	Layouts
+\*---------------------*/
+
+.center-button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*---------------------*\
+	Colors
+\*---------------------*/
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+/*---------------------*\
+	Special Lists
+\*---------------------*/
+
+.padded-list > li {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+/*---------------------*\
+	Buttons
+\*---------------------*/
+
+.full-width-button {
+	width: 100%;
+}
+
+/*---------------------*\
+	Special Divs
+\*---------------------*/
+
+.grey-row {
+	background-color: #EFEFEF;
+}
+
+.grey-box {
+	padding: 16px;
+	background-color: #EFEFEF;
+	border-radius: 8px;
+}
+
+.feature-box {
+	padding: 24px;
+	border: 1px solid #EFEFEF;
+	border-radius: 8px;
+}
+
+.feature-box > p {
+	margin-top: 16px;
+	margin-bottom: 0px;
+}
+
+.listings-box {
+	padding: 24px;
+	border: 1px solid #EFEFEF;
+	border-radius: 8px;
+	width: inherit;
+}
+
+.pricing-table {
+	padding: 24px;
+	text-align: center;
+	border-radius: 8px;
+	border: 2px solid #EEE;
+}
+
+.pricing-table > h3 {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+.pricing-table > h4 {
+	color: #26A65B;
+	margin-top: 0px;
+	padding-top: 4px;
+}
+
+.pricing-table > a {
+	background-color: #2ECC71;
+	margin-top: 16px;
+	display: block;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	padding: 8px;
+	font-size: 18px;
+	border-radius: 8px;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+}
+
+/*---------------------*\
+	Images
+\*---------------------*/
+.full-width-img {
+	width: 100%;
+	height: auto;
+}

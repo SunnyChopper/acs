@@ -1,0 +1,1 @@
+<p>{{ $email_data->body }}</p>
