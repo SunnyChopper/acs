@@ -97,6 +97,20 @@ class MembersController extends Controller
         return redirect(url('/members/dashboard/'));
     }
 
+    public function new_review() {
+        if ($this->is_verified() == false) {
+            return redirect(url('/members/not-verified'));
+        }
+
+        // Page data
+        $page_header = "New Review";
+
+        // Get all businesses
+        $businesses = Business::orderBy('name', 'asc')->get();
+
+        return view('members.new-review')->with('page_header', $page_header)->with('businesses', $businesses);
+    }
+
     public function not_verified() {
         // Page data
         $page_header = "Please Verify"; 

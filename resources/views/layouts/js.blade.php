@@ -50,11 +50,10 @@
 		// Get data
 		var _token = $("input[name=_token]").val();
 		var business_id = $("input[name=business_id]").val();
+		var order_id = $("input[name=order_id]").val();
 		var title = $("input[name=title]").val();
 		var stars = $("#stars").val();
 		var description = $("#description").val();
-
-		console.log("Business ID: " + business_id);
 
 		// Submit using AJAX
 		$.ajax({
@@ -63,6 +62,44 @@
 			data: {
 				_token: _token,
 				business_id: business_id,
+				order_id: order_id,
+				title: title,
+				stars: stars,
+				description: description
+			},
+			success: function(data) {
+				if(data == "Duplicate error") {
+					$("#error").html("You have already submitted a review for this order.");
+				} else {
+					window.location.replace('{{ url('/members/reviews') }}');
+				}
+			}
+		});
+	});
+
+	/*
+		This function is AJAX powered to support on page review submission
+	*/
+	$("#new_review_form").on('submit', function(e) {
+		// Prevent from sending
+		e.preventDefault();
+
+		// Get data
+		var _token = $("input[name=_token]").val();
+		var business_id = $("#business_id").val();
+		var order_id = $("input[name=order_id]").val();
+		var title = $("input[name=title]").val();
+		var stars = $("#stars").val();
+		var description = $("#description").val();
+
+		// Submit using AJAX
+		$.ajax({
+			url: '/reviews/members/create',
+			type: 'POST',
+			data: {
+				_token: _token,
+				business_id: business_id,
+				order_id: order_id,
 				title: title,
 				stars: stars,
 				description: description
