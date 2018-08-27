@@ -14,14 +14,14 @@
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="form-group">
 						<label>First Name<span class="red">*</span>:</label>
-						<input type="text" class="form-control" name="first_name" value="{{ explode(" ", Auth::user()->name)[0] }}" placeholder="Elon" required>
+						<input type="text" class="form-control" name="first_name" value="{{ Auth::user()->first_name }}" placeholder="Elon" required>
 				  	</div>
 				</div>
 
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				  	<div class="form-group">
 						<label>Last Name<span class="red">*</span>:</label>
-						<input type="text" class="form-control" name="last_name" value="{{ explode(" ", Auth::user()->name)[1] }}" placeholder="Musk" required>
+						<input type="text" class="form-control" name="last_name" value="{{ Auth::user()->last_name }}" placeholder="Musk" required>
 				  	</div>
 				</div>
 		  	</div>
