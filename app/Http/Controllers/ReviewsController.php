@@ -14,10 +14,11 @@ class ReviewsController extends Controller
     	$business_id = $data->business_id;
     	$title = $data->title;
     	$stars = $data->stars;
+        $order_id = $data->order_id;
     	$description = $data->description;
 
     	// Check to see if review already left by user
-    	$check = Review::where('user_id', $user_id)->where('business_id', $business_id)->count();
+    	$check = Review::where('user_id', $user_id)->where('order_id', $order_id)->count();
     	if ($check != 0) {
     		return "Duplicate error";
     	}
@@ -26,6 +27,7 @@ class ReviewsController extends Controller
     	$review = new Review();
     	$review->user_id = $user_id;
     	$review->business_id = $business_id;
+        $review->order_id = $order_id;
     	$review->title = $title;
     	$review->stars = $stars;
     	$review->description = $description;

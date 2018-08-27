@@ -36,6 +36,15 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="form-group">
+								<label>Order ID<span class="red">*</span>:</label>
+								<input type="text" name="order_id" class="form-control" required>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="form-group">
 								<label>Description:</label>
 								<textarea id="description" name="description" form="create_review" class="form-control" rows="4"></textarea>
 							</div>

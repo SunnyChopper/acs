@@ -69,7 +69,7 @@
 			},
 			success: function(data) {
 				if(data == "Duplicate error") {
-					$("#error").html("You have already submitted a review for this business.");
+					$("#error").html("You have already submitted a review for this order.");
 				} else {
 					window.location.replace('{{ url('/members/reviews') }}');
 				}

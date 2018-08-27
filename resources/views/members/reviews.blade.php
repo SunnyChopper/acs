@@ -7,6 +7,9 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<h4>Your Reviews</h4>
+				@if(count($review_array) != 0)
+				<a href="" class="btn btn-sm btn-primary mt-2">Write New Review</a>
+				@endif
 				<hr />
 			</div>
 		</div>
@@ -44,7 +47,12 @@
 		<div class="row mt-16">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="jumbotron">
-					<p class="text-center">You have not made any reviews yet...you may do so by searching for a business and clicking on 'Leave a Review'</p>
+					<h4 class="text-center">You have not made any reviews yet...click below to get started.</h4>
+					<div class="row">
+						<div class="col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-6 offset-sm-3 col-xs-12">
+							<a href="" class="btn btn-primary center-button mt-4 mb-0">Write New Review</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

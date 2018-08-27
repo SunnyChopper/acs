@@ -74,8 +74,8 @@ class RegisterController extends Controller
         $email_data = array('name'=> $data["first_name"] . " " . $data["last_name"], "body" => $body, 'to_email' => $data["email"]);
 
         $to_email = $data["email"];
-        Mail::send('emails.verify-email', $email_data, function($message) {
-            $message->to("ishy.singh@gmail.com")->subject('Verify Your AllCarShippers Account');
+        Mail::send('emails.verify-email', $email_data, function($message) use ($data) {
+            $message->to($data["email"], $data["first_name"] . " " . $data["last_name"])->subject('Verify Your AllCarShippers Account');
             $message->from(env('MAIL_USERNAME'), "Sunny Singh");
         });
         
