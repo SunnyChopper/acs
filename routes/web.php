@@ -48,8 +48,10 @@ Route::get('/members/dashboard/', 'MembersController@dashboard')->name('Dashboar
 Route::get('/members/listings/edit/{id}', 'MembersController@edit_listing')->name('Edit a listing');
 Route::get('/members/logout/', 'MembersController@logout')->name('Logout action for customers');
 Route::get('/members/reviews/', 'MembersController@reviews')->name('Review section for customers');
+Route::get('/members/reviews/new', 'MembersController@new_review')->name('Create a new review');
 Route::get('/members/not-verified', 'MembersController@not_verified')->name('Not verified account');
 Route::get('/verify/{email_verification_token}', 'MembersController@verify')->name('Verification action');
+
 // Business Backend
 Route::get('/business/login', 'BusinessController@login')->name('Login page for businesses');
 Route::get('/business/dashboard', 'BusinessController@dashboard')->name('Dashboard of businessess');
