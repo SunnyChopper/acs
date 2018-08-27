@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Listing;
 use App\Review;
 use App\Business;
+use App\User;
 use Auth;
 
 class MembersController extends Controller
@@ -28,6 +29,11 @@ class MembersController extends Controller
     }
 
     public function dashboard() {
+        if ($this->is_verified() == false) {
+            return redirect(url('/members/not-verified'));
+        }
+
+        // Page data
     	$page_header = "Dashboard";
 
     	// Get listings by person
@@ -38,6 +44,11 @@ class MembersController extends Controller
     }
 
     public function edit_listing($id) {
+        if ($this->is_verified() == false) {
+            return redirect(url('/members/not-verified'));
+        }
+
+        // Page data
     	$page_header = "Edit Listing";
 
     	// Get listing
@@ -47,6 +58,10 @@ class MembersController extends Controller
     }
 
     public function reviews() {
+        if ($this->is_verified() == false) {
+            return redirect(url('/members/not-verified'));
+        }
+
         // Page data
         $page_header = "Reviews";
 
@@ -68,5 +83,33 @@ class MembersController extends Controller
         }
 
         return view('members.reviews')->with('page_header', $page_header)->with('review_array', $review_array);
+    }
+
+    public function verify($email_verification_token) {
+        // Get user with the matching email verification token
+        $user = User::where('email_verification_token', $email_verification_token)->first();
+
+        // Verify them
+        $user->verified = 1;
+        $user->save();
+
+        // Redirect to dashboard
+        return redirect(url('/members/dashboard/'));
+    }
+
+    public function not_verified() {
+        // Page data
+        $page_header = "Please Verify"; 
+
+        return view('members.not-verified')->with('page_header', $page_header);
+    }
+
+    private function is_verified() {
+        $user = Auth::user();
+        if ($user->verified == 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
