@@ -1,1 +1,1 @@
-<p>{{ $email_data->body }}</p>
+<p>{{ $body }}</p>

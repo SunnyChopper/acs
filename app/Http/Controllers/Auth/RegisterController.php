@@ -84,6 +84,7 @@ class RegisterController extends Controller
             'last_name' => $data["last_name"],
             'email' => $data['email'],
             'email_verification_token' => $email_verification_token,
+            'verified' => 0,
             'password' => Hash::make($data['password']),
         ]);
     }
