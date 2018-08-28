@@ -55,7 +55,10 @@ class PagesController extends Controller
     public function reviews() {
         $page_header = "Reviews";
 
-        return view('pages.reviews')->with('page_header', $page_header);
+        // Get all businesses
+        $businesses = Business::orderBy('name', 'asc')->get();
+
+        return view('pages.reviews')->with('page_header', $page_header)->with('businesses', $businesses);
     }
     
 }

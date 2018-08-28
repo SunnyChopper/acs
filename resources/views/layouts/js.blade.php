@@ -113,4 +113,56 @@
 			}
 		});
 	});
+
+	$("#reviews_business_id").on('change', function() {
+		// Clear out the table
+		$("#reviews_body").empty();
+
+		// Return displays to normal
+		$("#reviews_row").show();
+		$("#no_reviews").hide();
+
+		// Get selected business ID
+		var selected_business = $(this).find(":selected");
+		var business_id = selected_business.val();
+
+		// Token
+		var _token = $("input[name=_token]").val();
+
+		// Create AJAX request
+		$.ajax({
+			url: '/reviews/fetch',
+			type: 'POST',
+			data : {
+				_token: _token,
+				business_id: business_id
+			},
+			success: function(data) {
+				// Convert to JSON
+				var review_json = JSON.parse(data);
+
+				// Check to see if no reviews
+				if (review_json.length == 0) {
+					// Hide table
+					$("#reviews_row").hide();
+					$("#no_reviews").show();
+				} else {
+					// Get table body object
+					var table_body = $("#reviews_body");
+					
+					for (var i = 0; i < review_json.length; i++) {
+						// Get data
+						var obj = review_json[i];
+						var title = obj["title"];
+						var description = obj["description"];
+						var rating = obj["stars"];
+
+						// Add HTML
+						var html_string = "<tr><td>" + title + "</td><td>" + description + "</td><td>" + rating + "/5</td></tr>";
+						table_body.append(html_string);
+					}
+				}
+			}
+		});
+	});
 </script>

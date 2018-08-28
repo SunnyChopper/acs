@@ -29,6 +29,7 @@ Route::post('/members/search', 'SearchController@members_search')->name('Search 
 Route::post('/reviews/create', 'ReviewsController@create')->name('Creating a review');
 Route::post('/reviews/members/create', 'ReviewsController@dashboard_create')->name('Creating a review from the dashboard');
 Route::post('/reviews/delete', 'ReviewsController@delete')->name('Deleting a review');
+Route::post('/reviews/fetch', 'ReviewsController@fetch')->name('Get reviews for a business');
 
 // Listings
 Route::post('/listings/create', 'ListingsController@create')->name('Create a listing');

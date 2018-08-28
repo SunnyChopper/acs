@@ -8,6 +8,16 @@ use Auth;
 
 class ReviewsController extends Controller
 {
+
+    public function fetch(Request $data) {
+        // Get data
+        $business_id = $data->business_id;
+
+        // Get reviews for business
+        $reviews = Review::where('business_id', $business_id)->get();
+        return $reviews->toJson();
+    }
+
     public function create(Request $data) {
     	// Get data
     	$user_id = Auth::id();
