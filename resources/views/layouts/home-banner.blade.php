@@ -8,7 +8,7 @@
 				<h1 class="text-white">All Car Shippers</h1>
 				<p class="text-white" style="background-color: rgba(0,0,0,0.75); padding: 12px;">Our mission is to make your experience of finding and trusting a vehicle shipping company as easy and quick as possible. Get started by searching for reputable carrier companies.</p>
 			</div>
-			<div class="col-lg-4 col-md-6 banner-right">
+			<div class="col-lg-6 col-md-6 banner-right">
 				<div class="tab-content" id="myTabContent">
 				  <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">
 				  	@if(Auth::guest())
